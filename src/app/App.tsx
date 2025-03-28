@@ -1,9 +1,18 @@
 import { MacbookScroll } from "../components/Hero.tsx";
+import { FloatingDock } from "../components/NavBar.tsx";
+// Icons
+import { TbSearch } from "react-icons/tb";
 
 function App() {
 
   return (
     <div className="overflow-hidden dark:bg-[#0B0B0F] bg-white w-full">
+      <div className="flex items-center justify-center h-3/4 mt-10 w-full">
+      <FloatingDock
+        mobileClassName="translate-y-20" // only for demo, remove for production
+        items={links}
+      />
+    </div>
       <MacbookScroll
         title={
           <span>
@@ -25,8 +34,67 @@ function App() {
 export default App
 
 
+// This will be used for the nav bar
 
-// Peerlist logo
+const links = [
+    {
+      title: "Home",
+      icon: (
+        <TbSearch className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "#",
+    },
+ 
+    {
+      title: "Products",
+      icon: (
+        <TbSearch className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "#",
+    },
+    {
+      title: "Components",
+      icon: (
+        <TbSearch className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "#",
+    },
+    {
+      title: "Aceternity UI",
+      icon: (
+        <img
+          src="https://assets.aceternity.com/logo-dark.png"
+          width={20}
+          height={20}
+          alt="Aceternity Logo"
+        />
+      ),
+      href: "#",
+    },
+    {
+      title: "Changelog",
+      icon: (
+        <TbSearch  className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "#",
+    },
+ 
+    {
+      title: "Twitter",
+      icon: (
+        <TbSearch className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "#",
+    },
+    {
+      title: "GitHub",
+      icon: (
+        <TbSearch className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "#",
+    },
+  ];
+
 const Badge = ({ className }: { className?: string }) => {
   return (
     <svg
@@ -68,3 +136,4 @@ const Badge = ({ className }: { className?: string }) => {
     </svg>
   );
 };
+
