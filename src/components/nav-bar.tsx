@@ -17,7 +17,10 @@ import {
 } from "motion/react";
 import { useRef, useState } from "react";
 
-export const FloatingDock = ({
+import { NavLink } from "react-router";
+
+
+export const NavBar = ({
   items,
   desktopClassName,
   mobileClassName,
@@ -67,13 +70,13 @@ const FloatingDockMobile = ({
                 }}
                 transition={{ delay: (items.length - 1 - idx) * 0.05 }}
               >
-                <a
-                  href={item.href}
+                <NavLink
+                  to={item.href} 
                   key={item.title}
-                  className="h-10 w-10 rounded-full bg-gray-50 dark:bg-neutral-900 flex items-center justify-center"
+                  className={cn("h-10 w-10 rounded-full bg-gray-50 dark:bg-neutral-900 flex items-center justify-center", ({isActive}) =>(isActive ? "bg-gray-200 dark:bg-neutral-800" : "bg-gray-50 dark:bg-neutral-900"))}
                 >
                   <div className="h-4 w-4">{item.icon}</div>
-                </a>
+                </NavLink>
               </motion.div>
             ))}
           </motion.div>
@@ -167,7 +170,7 @@ function IconContainer({
   const [hovered, setHovered] = useState(false);
 
   return (
-    <a href={href}>
+    <NavLink to={href}>
       <motion.div
         ref={ref}
         style={{ width, height }}
@@ -194,6 +197,6 @@ function IconContainer({
           {icon}
         </motion.div>
       </motion.div>
-    </a>
+    </NavLink>
   );
 }
