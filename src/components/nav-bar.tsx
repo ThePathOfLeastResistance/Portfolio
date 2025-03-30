@@ -19,7 +19,6 @@ import { useRef, useState } from "react";
 
 import { NavLink } from "react-router";
 
-
 export const NavBar = ({
   items,
   desktopClassName,
@@ -71,9 +70,15 @@ const FloatingDockMobile = ({
                 transition={{ delay: (items.length - 1 - idx) * 0.05 }}
               >
                 <NavLink
-                  to={item.href} 
+                  to={item.href}
                   key={item.title}
-                  className={cn("h-10 w-10 rounded-full bg-gray-50 dark:bg-neutral-900 flex items-center justify-center", ({isActive}) =>(isActive ? "bg-gray-200 dark:bg-neutral-800" : "bg-gray-50 dark:bg-neutral-900"))}
+                  className={cn(
+                    "h-10 w-10 rounded-full bg-gray-50 dark:bg-neutral-900 flex items-center justify-center",
+                    ({ isActive }) =>
+                      isActive
+                        ? "bg-gray-200 dark:bg-neutral-800"
+                        : "bg-gray-50 dark:bg-neutral-900"
+                  )}
                 >
                   <div className="h-4 w-4">{item.icon}</div>
                 </NavLink>
@@ -105,7 +110,7 @@ const FloatingDockDesktop = ({
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
-        "mx-auto hidden md:flex h-16 gap-4 items-end  rounded-2xl bg-gray-50 dark:bg-neutral-900 px-4 pb-3",
+        "mx-auto hidden md:flex h-16 gap-4 items-end rounded-2xl bg-gray-50 dark:bg-neutral-900 px-4 pb-3",
         className
       )}
     >
@@ -138,7 +143,11 @@ function IconContainer({
   const widthTransform = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
   const heightTransform = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
 
-  const widthTransformIcon = useTransform(distance, [-150, 0, 150], [20, 40, 20]);
+  const widthTransformIcon = useTransform(
+    distance,
+    [-150, 0, 150],
+    [20, 40, 20]
+  );
   const heightTransformIcon = useTransform(
     distance,
     [-150, 0, 150],
@@ -176,7 +185,7 @@ function IconContainer({
         style={{ width, height }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="aspect-square rounded-full bg-gray-200 dark:bg-neutral-800 flex items-center justify-center relative"
+        className="mx-4 bg-gray-200 dark:bg-neutral-800 flex items-center justify-center relative"
       >
         <AnimatePresence>
           {hovered && (
