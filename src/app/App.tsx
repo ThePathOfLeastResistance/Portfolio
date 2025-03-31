@@ -4,7 +4,7 @@ import { Outlet } from "react-router";
 
 export default function App() {
   return (
-    <div className="flex flex-col items-center justify-center w-full h-full">
+    <div className="flex flex-col items-center justify-center w-full h-full bg-background-500">
       <div className="flex items-center justify-center h-[12rem] w-full">
         <NavBar
           mobileClassName="translate-y-20" // only for demo, remove for production

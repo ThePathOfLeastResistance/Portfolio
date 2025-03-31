@@ -1,1 +1,54 @@
 @import "tailwindcss";
+
+/* 
+Used: https://colorhunt.co/palette/f1f6f9394867212a3e9ba4b5
+Tailwind Theme genarator: https://www.tints.dev
+
+*/
+
+@theme {
+  --color-background-50: #ffffff;
+  --color-background-100: #fbfdfd;
+  --color-background-200: #f8fafc;
+  --color-background-300: #f8fafc;
+  --color-background-400: #f4f8fa;
+  --color-background-500: #f1f6f9;
+  --color-background-600: #adcbdc;
+  --color-background-700: #699fbf;
+  --color-background-800: #3a6b88;
+  --color-background-900: #1d3644;
+  --color-background-950: #0f1c24;
+  --color-primary-50: #e8ebf2;
+  --color-primary-100: #d1d8e6;
+  --color-primary-200: #a6b4ce;
+  --color-primary-300: #788cb4;
+  --color-primary-400: #526894;
+  --color-primary-500: #394867;
+  --color-primary-600: #2d3a52;
+  --color-primary-700: #232c3e;
+  --color-primary-800: #181e2b;
+  --color-primary-900: #0b0e14;
+  --color-primary-950: #05070a;
+  --color-text-50: #e4e8f1;
+  --color-text-100: #cad2e3;
+  --color-text-200: #91a1c5;
+  --color-text-300: #5c74a8;
+  --color-text-400: #3e4f74;
+  --color-text-500: #212a3e;
+  --color-text-600: #1b2232;
+  --color-text-700: #131925;
+  --color-text-800: #0c1017;
+  --color-text-900: #07090d;
+  --color-text-950: #040507;
+  --color-secondary-50: #f6f7f8;
+  --color-secondary-100: #eaecf0;
+  --color-secondary-200: #d6dae1;
+  --color-secondary-300: #c4cad4;
+  --color-secondary-400: #b0b7c4;
+  --color-secondary-500: #9ba4b5;
+  --color-secondary-600: #758299;
+  --color-secondary-700: #576175;
+  --color-secondary-800: #383f4c;
+  --color-secondary-900: #1c2026;
+  --color-secondary-950: #0f1115;
+} 
