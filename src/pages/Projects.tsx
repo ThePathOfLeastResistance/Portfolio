@@ -1,10 +1,27 @@
+
+import { Highlight  } from "../components/ui/highlight";
+
 export default function Projects() {
   return (
-    <div className="flex flex-col items-center justify-center w-full h-full">
-      <h1 className="text-2xl font-bold">About Page</h1>
-      <p className="mt-4 text-gray-600">
-        This is the about page of the application.
-      </p>
-    </div>
+    <Highlight testimonials={testimonials} /> 
   );
 }
+
+const testimonials = [
+    {
+      description: "This project has been a game-changer for our team. The user interface is intuitive and the performance is top-notch.",
+      project: "Lazer Engraver",
+      techstack: "Hardware",
+      src: "/",
+    },{
+      description: "This project has been a game-changer for our team. The user interface is intuitive and the performance is top-notch.",
+      project: "Lazer Engraver",
+      techstack: "Hardware",
+      src: "/",
+    },{
+      description: "This project has been a game-changer for our team. The user interface is intuitive and the performance is top-notch.",
+      project: "Lazer Engraver",
+      techstack: "Hardware",
+      src: "/",
+    },
+  ];
