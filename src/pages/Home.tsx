@@ -1,9 +1,22 @@
 import { Carousel } from "../components/carousel";
 import { Timeline } from "../components/ui/timeline";
+import { Spotlight } from "../components/spotlight";
 
 export default function Home() {
   return (
-    <div className="relative overflow-hidden w-full h-full py-20">
+    <div className="">
+      <div className="h-screen w-full bg-gradient-to-b from-neutral-900 to-neutral-800">
+        <Spotlight />
+        <div className="p-4 max-w-7xl  mx-auto relative z-10  w-full pt-20 md:pt-0">
+          <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+            Spotlight <br /> which is not overused.
+          </h1>
+          <p className="mt-4 font-normal text-base text-neutral-300 max-w-lg text-center mx-auto">
+            A subtle yet effective spotlight effect, because the previous
+            version is used a bit too much these days.
+          </p>
+        </div>
+      </div>
       {/* Major Acomplishments - Hackathons, Hackathons Canada, 3d lazer engraver, this website */}
       <div>
         <Carousel slides={slideData} />
@@ -15,7 +28,7 @@ export default function Home() {
   );
 }
 
-<h1 className = "size"> </h1>
+<h1 className="size"> </h1>;
 
 const slideData = [
   {
@@ -46,7 +59,7 @@ const timelineData = [
     content: (
       <div>
         <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-          Did this 
+          Did this
         </p>
         <div className="grid grid-cols-2 gap-4">
           <img
@@ -86,7 +99,7 @@ const timelineData = [
     content: (
       <div>
         <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-          did this 
+          did this
         </p>
         <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
           Hackathons are ....
