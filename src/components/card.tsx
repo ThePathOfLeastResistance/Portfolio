@@ -1,31 +1,35 @@
 import { useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { cn } from "../lib/utils";
- 
+
 export const Card = ({
-  imageUrl,
+  iconPath,
   children,
   childrenClassName,
-  imageClassName,
   className,
+  projectName,
+  projectDescription,
+  languages
 }: {
-  imageUrl: string;
+  iconPath: string;
   children: React.ReactNode | string;
   childrenClassName?: string;
-  imageClassName?: string;
   className?: string;
+  languages?: string[];
+  projectName?: string;
+  projectDescription?: string
 }) => {
   const ref = useRef<HTMLDivElement>(null);
- 
+
   const [direction, setDirection] = useState<
     "top" | "bottom" | "left" | "right" | string
   >("left");
- 
+
   const handleMouseEnter = (
     event: React.MouseEvent<HTMLDivElement, MouseEvent>
   ) => {
     if (!ref.current) return;
- 
+
     const direction = getDirection(event, ref.current);
     console.log("direction", direction);
     switch (direction) {
@@ -46,7 +50,7 @@ export const Card = ({
         break;
     }
   };
- 
+
   const getDirection = (
     ev: React.MouseEvent<HTMLDivElement, MouseEvent>,
     obj: HTMLElement
@@ -57,7 +61,7 @@ export const Card = ({
     const d = Math.round(Math.atan2(y, x) / 1.57079633 + 5) % 4;
     return d;
   };
- 
+
   return (
     <motion.div
       onMouseEnter={handleMouseEnter}
@@ -77,15 +81,28 @@ export const Card = ({
           <motion.div className="group-hover/card:block hidden absolute inset-0 w-full h-full bg-black/40 z-10 transition duration-500" />
           <motion.div
             variants={variants}
-            className="h-full w-full relative bg-gray-50 dark:bg-black"
+            className="h-full w-full relative"
             transition={{
               duration: 0.2,
               ease: "easeOut",
             }}
           >
-           <h1>
-            Hello
-            </h1> 
+            <div className="h-full w-full p-20  shadow-[12px_11px_53px_-25px_#212a3e] bg-cwhite-500 rounded-lg  bg-cblue-500 text-cwhite-500 scale-[1.15]">
+              <div className="flex items-start">
+                  <img className = "h-8 w-8" src={iconPath} alt={projectName} />
+                  <div className="flex items-start w-full h-full">
+                    <h1 className="text-cblack-500 text-2xl font-bold">
+                      {projectName}
+                    </h1>
+                    <p className="text-cblack-500 text-sm font-normal">
+                      {projectDescription}
+                    </p>
+                    <div className="flex flex-row gap-2 mt-2">
+                      {languages?.map((item) => (<p key={item}>{item}</p>) )}
+                    </div>
+                  </div>
+              </div>
+            </div>
           </motion.div>
           <motion.div
             variants={textVariants}
@@ -105,12 +122,12 @@ export const Card = ({
     </motion.div>
   );
 };
- 
+
 const variants = {
   initial: {
     x: 0,
   },
- 
+
   exit: {
     x: 0,
     y: 0,
@@ -128,7 +145,7 @@ const variants = {
     x: -20,
   },
 };
- 
+
 const textVariants = {
   initial: {
     y: 0,
