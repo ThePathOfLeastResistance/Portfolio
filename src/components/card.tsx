@@ -31,7 +31,7 @@ export const Card = ({
     if (!ref.current) return;
 
     const direction = getDirection(event, ref.current);
-    console.log("direction", direction);
+
     switch (direction) {
       case 0:
         setDirection("top");
@@ -67,7 +67,7 @@ export const Card = ({
       onMouseEnter={handleMouseEnter}
       ref={ref}
       className={cn(
-        "md:h-96 w-60 h-60 md:w-96 bg-transparent rounded-lg overflow-hidden group/card relative",
+        "h-70 w-80 bg-cwhite-300 rounded-lg border-cgrey-200 border-1 text-cblack-500 overflow-hidden group/card relative",
         className
       )}
     >
@@ -87,20 +87,18 @@ export const Card = ({
               ease: "easeOut",
             }}
           >
-            <div className="h-full w-full p-20  shadow-[12px_11px_53px_-25px_#212a3e] bg-cwhite-500 rounded-lg  bg-cblue-500 text-cwhite-500 scale-[1.15]">
-              <div className="flex items-start">
-                  <img className = "h-8 w-8" src={iconPath} alt={projectName} />
-                  <div className="flex items-start w-full h-full">
-                    <h1 className="text-cblack-500 text-2xl font-bold">
+            <div className="h-full w-full p-10 my-auto scale-[1.15]">
+              <div className="flex items-start flex-col">
+                  <img className = "h-8 w-8 my-1" src={iconPath} alt={projectName} />
+                    <h1 className="text-cblack-500 text-lg mt-2 font-bold">
                       {projectName}
                     </h1>
-                    <p className="text-cblack-500 text-sm font-normal">
+                    <p className="text-cblack-400 text-sm font-normal mt-2">
                       {projectDescription}
                     </p>
-                    <div className="flex flex-row gap-2 mt-2">
+                    <div className="flex flex-row gap-2 mt-2 text-cgrey-500 text-xs font-normal">
                       {languages?.map((item) => (<p key={item}>{item}</p>) )}
                     </div>
-                  </div>
               </div>
             </div>
           </motion.div>
@@ -133,16 +131,16 @@ const variants = {
     y: 0,
   },
   top: {
-    y: 20,
+    y: 10,
   },
   bottom: {
-    y: -20,
+    y: -10,
   },
   left: {
-    x: 20,
+    x: 10,
   },
   right: {
-    x: -20,
+    x: -10,
   },
 };
 
@@ -158,7 +156,7 @@ const textVariants = {
     opacity: 0,
   },
   top: {
-    y: -20,
+    y: -10,
     opacity: 1,
   },
   bottom: {
@@ -170,7 +168,7 @@ const textVariants = {
     opacity: 1,
   },
   right: {
-    x: 20,
+    x: 10,
     opacity: 1,
   },
 };

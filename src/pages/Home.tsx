@@ -17,7 +17,7 @@ export default function Home() {
         </p>
       </div>
     </div>
-      {/* Major Acomplishments - Hackathons, Hackathons Canada, 3d lazer engraver, this website */}
+      {/* Major Acomplishments - Hackathons, Hackathons Canada, 3d laser engraver, this website */}
       <div>
         <Carousel slides={slideData} />
       </div>

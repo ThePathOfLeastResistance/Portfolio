@@ -4,8 +4,8 @@ import { Outlet } from "react-router";
 
 export default function App() {
   return (
-    <div className="flex flex-col items-center justify-center w-full h-full bg-background-500">
-      <div className="fixed top-0 z-20 flex items-center justify-center mt-20 w-full">
+    <div className="flex flex-col items-center justify-center w-full h-full bg-cwhite-400">
+      <div className="fixed top-0 z-90 flex items-center justify-center mt-20 w-full">
         <NavBar
           mobileClassName="translate-y-20" // only for demo, remove for production
           items={links}
