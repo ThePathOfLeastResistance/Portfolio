@@ -67,7 +67,7 @@ export const Card = ({
       onMouseEnter={handleMouseEnter}
       ref={ref}
       className={cn(
-        "h-70 w-80 bg-cwhite-300 rounded-lg border-cgrey-200 border-1 text-cblack-500 overflow-hidden group/card relative",
+        "h-70 w-80 bg-cwhite-400 rounded-lg border-cgrey-200 border-1 text-cblack-500 overflow-hidden group/card relative",
         className
       )}
     >
