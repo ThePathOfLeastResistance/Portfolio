@@ -16,61 +16,54 @@ export default function App() {
   );
 }
 
-// TODO: figure out a cool hero section 
+// TODO: figure out a cool hero section
 // TODO: Make it so that the person can choose between different colors shcemes
 // This will be used for the nav bar
 // TODO: Add a prop to chnage between a navlink and a normal a tag for the github link
 // TODO: Change the size of the nav bars to be bigger with more space
 const links = [
   {
-    title: "Home",
-    icon: (
-      <h1 className="h-full w-full text-neutral-500 dark:text-neutral-300" >Home</h1>
-    ),
+    title: "Check out my House :)",
+    icon: "Home",
+    isLogo: false,
     href: "/",
   },
 
   {
-    title: "About",
-    icon: (
-      <h1 className="h-full w-full text-neutral-500 dark:text-neutral-300" >About</h1>
-    ),
+    title: "Who is James Cao?",
+    icon: "About",
+    isLogo: false,
     href: "/about",
   },
   {
-    title: "Projects",
-    icon: (
-      <h1 className="h-full w-full text-neutral-500 dark:text-neutral-300" >Projects</h1>
-    ),
-    href: "/projects",
+    title: "Wow, I am so cool",
+    icon: "Projects",
+    isLogo: false,
+     href: "/projects",
   },
   {
     title: "Resume",
-    icon: (
-      <h1 className="h-full w-full text-neutral-500 dark:text-neutral-300" >Resume</h1>
-    ),
+    icon: "Resume",
+    isLogo: false,
     href: "/resume",
   },
   {
     title: "Other",
-    icon: (
-      <h1 className="h-full w-full text-neutral-500 dark:text-neutral-300" >Other</h1>
-    ),
+    icon: "Tools",
+    isLogo: false, 
     href: "/other",
   },
   {
     title: "Other",
-    icon: (
-      <h1 className="h-full w-full text-neutral-500 dark:text-neutral-300" >Other</h1>
-    ),
+    icon: "Other",
+   isLogo: false, 
     href: "/other",
   },
   {
     title: "GitHub Repos",
-    icon: (
-      <h1 className="h-full w-full text-neutral-500 dark:text-neutral-300" >Star</h1>
-    ),
+    icon: "Star",
+    isLogo: true, 
     href: "#",
   },
 ];
-// TODO:Change the h1 tag to a icon of the github start 
+// TODO:Change the h1 tag to a icon of the github start

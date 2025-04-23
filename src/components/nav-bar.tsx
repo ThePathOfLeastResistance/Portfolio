@@ -1,9 +1,3 @@
-/**
- * Note: Use position fixed according to your needs
- * Desktop navbar is better positioned at the bottom
- * Mobile navbar is better positioned at bottom right.
- **/
-
 import { cn } from "../lib/utils";
 
 import { TbLayoutNavbarCollapse } from "react-icons/tb";
@@ -18,13 +12,14 @@ import {
 import { useRef, useState } from "react";
 
 import { NavLink } from "react-router";
+import { h1, img } from "motion/react-client";
 
 export const NavBar = ({
   items,
   desktopClassName,
   mobileClassName,
 }: {
-  items: { title: string; icon: React.ReactNode; href: string }[];
+  items: { title: string; icon: string; href: string ; isLogo: boolean}[];
   desktopClassName?: string;
   mobileClassName?: string;
 }) => {
@@ -40,7 +35,7 @@ const FloatingDockMobile = ({
   items,
   className,
 }: {
-  items: { title: string; icon: React.ReactNode; href: string }[];
+  items: { title: string; icon: string; href: string ; isLogo: boolean}[];
   className?: string;
 }) => {
   const [open, setOpen] = useState(false);
@@ -73,7 +68,7 @@ const FloatingDockMobile = ({
                   to={item.href}
                   key={item.title}
                   className={cn(
-                    "h-10 w-10 rounded-full bg-gray-50 dark:bg-neutral-900 flex items-center justify-center",
+                    "h-7 w-16 rounded-full bg-gray-50 dark:bg-neutral-900 flex items-center justify-center",
                     ({ isActive }) =>
                       isActive
                         ? "bg-gray-200 dark:bg-neutral-800"
@@ -101,7 +96,7 @@ const FloatingDockDesktop = ({
   items,
   className,
 }: {
-  items: { title: string; icon: React.ReactNode; href: string }[];
+  items: { title: string; icon: string; href: string, isLogo: boolean}[];
   className?: string;
 }) => {
   const mouseX = useMotionValue(Infinity);
@@ -126,10 +121,12 @@ function IconContainer({
   title,
   icon,
   href,
+  isLogo,
 }: {
   mouseX: MotionValue;
   title: string;
-  icon: React.ReactNode;
+  icon: string;
+  isLogo?: boolean;
   href: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -140,15 +137,13 @@ function IconContainer({
     return val - bounds.x - bounds.width / 2;
   });
 
-  const widthTransform = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
-  const heightTransform = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
 
-  const widthTransformIcon = useTransform(
-    distance,
-    [-150, 0, 150],
-    [20, 40, 20]
-  );
-  const heightTransformIcon = useTransform(
+  // [hovering other icons, when you hover, normal]
+  // I set it to [90%, 140%, 100%]
+  const widthTransform = useTransform(distance, [-150, 0, 150], [72, 112, 80]);
+  const heightTransform = useTransform(distance, [-150, 0, 150], [36, 56, 40]);
+
+  const textTransformIcon = useTransform(
     distance,
     [-150, 0, 150],
     [20, 40, 20]
@@ -165,12 +160,8 @@ function IconContainer({
     damping: 12,
   });
 
-  const widthIcon = useSpring(widthTransformIcon, {
-    mass: 0.1,
-    stiffness: 150,
-    damping: 12,
-  });
-  const heightIcon = useSpring(heightTransformIcon, {
+
+  const textSize = useSpring(textTransformIcon, {
     mass: 0.1,
     stiffness: 150,
     damping: 12,
@@ -185,7 +176,7 @@ function IconContainer({
         style={{ width, height }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="mx-4 bg-gray-200 dark:bg-neutral-800 flex items-center justify-center relative"
+        className="mx-4 bg-cwhite-400 flex items-center justify-center relative rounded-lg border-2 border-gray-200"
       >
         <AnimatePresence>
           {hovered && (
@@ -193,17 +184,18 @@ function IconContainer({
               initial={{ opacity: 0, y: 10, x: "-50%" }}
               animate={{ opacity: 1, y: 0, x: "-50%" }}
               exit={{ opacity: 0, y: 2, x: "-50%" }}
-              className="px-2 py-0.5 whitespace-pre rounded-md bg-gray-100 border dark:bg-neutral-800 dark:border-neutral-900 dark:text-white border-gray-200 text-neutral-700 absolute left-1/2 -translate-x-1/2 -top-8 w-fit text-xs"
+              className="px-2 py-0.5 whitespace-pre rounded-md] bg-cgrey-400 border border-gray-200 text-cblack-500 absolute left-1/2 -translate-x-1/2 -top-8 w-fit text-xs"
             >
               {title}
             </motion.div>
           )}
         </AnimatePresence>
         <motion.div
-          style={{ width: widthIcon, height: heightIcon }}
-          className="flex items-center justify-center"
+          // style={{ width: widthIcon, height: heightIcon }}
+          className="flex items-center mx-auto justify-center"
         >
-          {icon}
+          {isLogo? <img src={icon} alt="" /> : <h1 className="h-full w-full">{icon}</h1>}
+          
         </motion.div>
       </motion.div>
     </NavLink>

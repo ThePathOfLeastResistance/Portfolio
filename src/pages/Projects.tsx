@@ -7,7 +7,7 @@ export default function Projects() {
       <Highlight testimonials={testimonials} />{" "}
       <div className="md:grid-cols-2 grid-cols-1 gap-8 grid">
         <Card
-          projectName="laser Engraver"
+          projectName="CNC Router"
           iconPath="\icon\laserEngraver.svg"
           projectDescription="A DIY laser Engraver with a 12w laser module on a plane of 60cm by 60cm: The project is based on the open-source software GRBL"
           languages={["C++", "Python"]}
@@ -20,7 +20,7 @@ export default function Projects() {
           </h1>
         </Card>
         <Card
-          projectName="laser Engraver"
+          projectName="Laser Engraver"
           iconPath="\icon\laserEngraver.svg"
           projectDescription="laser Engraver"
           languages={["C++", "Python"]}
@@ -33,7 +33,7 @@ export default function Projects() {
           </h1>
         </Card>{" "}
         <Card
-          projectName="laser Engraver"
+          projectName="Camera Slider"
           iconPath="\icon\laserEngraver.svg"
           projectDescription="laser Engraver"
           languages={["C++", "Python"]}
@@ -46,7 +46,7 @@ export default function Projects() {
           </h1>
         </Card>
         <Card
-          projectName="laser Engraver"
+          projectName="Automous Rover"
           iconPath="\icon\laserEngraver.svg"
           projectDescription="laser Engraver"
           languages={["C++", "Python"]}
@@ -58,71 +58,7 @@ export default function Projects() {
             <a href="">Github</a>
           </h1>
         </Card>
-        <Card
-          projectName="laser Engraver"
-          iconPath="\icon\laserEngraver.svg"
-          projectDescription="laser Engraver"
-          languages={["C++", "Python"]}
-        >
-          <h1 className="font-bold text-xl">
-            <a>Check it OUT!</a>
-          </h1>
-          <h1 className="font-normal text-sm">
-            <a href="">Github</a>
-          </h1>
-        </Card>
-        <Card
-          projectName="laser Engraver"
-          iconPath="\icon\laserEngraver.svg"
-          projectDescription="laser Engraver"
-          languages={["C++", "Python"]}
-        >
-          <h1 className="font-bold text-xl">
-            <a>Check it OUT!</a>
-          </h1>
-          <h1 className="font-normal text-sm">
-            <a href="">Github</a>
-          </h1>
-        </Card>
-        <Card
-          projectName="laser Engraver"
-          iconPath="\icon\laserEngraver.svg"
-          projectDescription="laser Engraver"
-          languages={["C++", "Python"]}
-        >
-          <h1 className="font-bold text-xl">
-            <a>Check it OUT!</a>
-          </h1>
-          <h1 className="font-normal text-sm">
-            <a href="">Github</a>
-          </h1>
-        </Card>
-        <Card
-          projectName="laser Engraver"
-          iconPath="\icon\laserEngraver.svg"
-          projectDescription="laser Engraver"
-          languages={["C++", "Python"]}
-        >
-          <h1 className="font-bold text-xl">
-            <a>Check it OUT!</a>
-          </h1>
-          <h1 className="font-normal text-sm">
-            <a href="">Github</a>
-          </h1>
-        </Card>
-        <Card
-          projectName="laser Engraver"
-          iconPath="\icon\laserEngraver.svg"
-          projectDescription="laser Engraver"
-          languages={["C++", "Python"]}
-        >
-          <h1 className="font-bold text-xl">
-            <a>Check it OUT!</a>
-          </h1>
-          <h1 className="font-normal text-sm">
-            <a href="">Github</a>
-          </h1>
-        </Card>
+        
       </div>
     </div>
   );
