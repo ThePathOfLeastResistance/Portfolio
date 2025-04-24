@@ -12,14 +12,14 @@ import {
 import { useRef, useState } from "react";
 
 import { NavLink } from "react-router";
-import { h1, img } from "motion/react-client";
+
 
 export const NavBar = ({
   items,
   desktopClassName,
   mobileClassName,
 }: {
-  items: { title: string; icon: string; href: string ; isLogo: boolean}[];
+  items: { title: string; icon: string; href: string; isLogo: boolean }[];
   desktopClassName?: string;
   mobileClassName?: string;
 }) => {
@@ -35,7 +35,7 @@ const FloatingDockMobile = ({
   items,
   className,
 }: {
-  items: { title: string; icon: string; href: string ; isLogo: boolean}[];
+  items: { title: string; icon: string; href: string; isLogo: boolean }[];
   className?: string;
 }) => {
   const [open, setOpen] = useState(false);
@@ -96,7 +96,7 @@ const FloatingDockDesktop = ({
   items,
   className,
 }: {
-  items: { title: string; icon: string; href: string, isLogo: boolean}[];
+  items: { title: string; icon: string; href: string; isLogo: boolean }[];
   className?: string;
 }) => {
   const mouseX = useMotionValue(Infinity);
@@ -137,17 +137,16 @@ function IconContainer({
     return val - bounds.x - bounds.width / 2;
   });
 
-
   // [hovering other icons, when you hover, normal]
   // I set it to [90%, 140%, 100%]
   const widthTransform = useTransform(distance, [-150, 0, 150], [72, 112, 80]);
   const heightTransform = useTransform(distance, [-150, 0, 150], [36, 56, 40]);
 
-  const textTransformIcon = useTransform(
-    distance,
-    [-150, 0, 150],
-    [20, 40, 20]
-  );
+  // const textTransformIcon = useTransform(
+  //   distance,
+  //   [-150, 0, 150],
+  //   [18, 28, 20]
+  // );
 
   const width = useSpring(widthTransform, {
     mass: 0.1,
@@ -160,12 +159,11 @@ function IconContainer({
     damping: 12,
   });
 
-
-  const textSize = useSpring(textTransformIcon, {
-    mass: 0.1,
-    stiffness: 150,
-    damping: 12,
-  });
+  // const textSize = useSpring(textTransformIcon, {
+  //   mass: 0.1,
+  //   stiffness: 150,
+  //   damping: 12,
+  // });
 
   const [hovered, setHovered] = useState(false);
 
@@ -194,8 +192,17 @@ function IconContainer({
           // style={{ width: widthIcon, height: heightIcon }}
           className="flex items-center mx-auto justify-center"
         >
-          {isLogo? <img src={icon} alt="" /> : <h1 className="h-full w-full">{icon}</h1>}
-          
+          {isLogo ? (
+            <img src={icon} alt="" />
+          ) : (
+            <motion.h1
+              className="h-full w-full"
+            >
+              {icon}
+            </motion.h1>
+          )}
+          {/* TODO: figure out the styling for this part */}
+        {/* TODO: Add cool text animations */}
         </motion.div>
       </motion.div>
     </NavLink>
