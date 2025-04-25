@@ -3,7 +3,7 @@ import { Card } from "../components/card.tsx";
 
 export default function Projects() {
   return (
-    <div className="bg-cwhite-300 mt-30 flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
+    <div className="bg-cwhite-400 mt-40 flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
       <Highlight testimonials={testimonials} />{" "}
       <div className="md:grid-cols-2 grid-cols-1 gap-8 grid">
         <Card
@@ -58,7 +58,45 @@ export default function Projects() {
             <a href="">Github</a>
           </h1>
         </Card>
-        
+        <Card
+          projectName="CheckMint"
+          iconPath="\icon\laserEngraver.svg"
+          projectDescription="laser Engraver"
+          languages={["C++", "Python"]}
+        >
+          <h1 className="font-bold text-xl">
+            <a>Check it OUT!</a>
+          </h1>
+          <h1 className="font-normal text-sm">
+            <a href="">Github</a>
+          </h1>
+        </Card>
+        <Card
+          projectName="Expreso"
+          iconPath="\icon\laserEngraver.svg"
+          projectDescription="laser Engraver"
+          languages={["C++", "Python"]}
+        >
+          <h1 className="font-bold text-xl">
+            <a>Check it OUT!</a>
+          </h1>
+          <h1 className="font-normal text-sm">
+            <a href="">Github</a>
+          </h1>
+        </Card>
+        <Card
+          projectName="Portoflio Website"
+          iconPath="\icon\laserEngraver.svg"
+          projectDescription="laser Engraver"
+          languages={["C++", "Python"]}
+        >
+          <h1 className="font-bold text-xl">
+            <a>Check it OUT!</a>
+          </h1>
+          <h1 className="font-normal text-sm">
+            <a href="">Github</a>
+          </h1>
+        </Card>
       </div>
     </div>
   );
@@ -68,21 +106,21 @@ const testimonials = [
   {
     description:
       "This project has been a game-changer for our team. The user interface is intuitive and the performance is top-notch.",
-    project: "laser Engraver",
+    project: "Laser Engraver",
     techstack: "Hardware",
     src: "/",
   },
   {
     description:
       "This project has been a game-changer for our team. The user interface is intuitive and the performance is top-notch.",
-    project: "laser Engraver",
+    project: "CheckMint",
     techstack: "Hardware",
     src: "/",
   },
   {
     description:
       "This project has been a game-changer for our team. The user interface is intuitive and the performance is top-notch.",
-    project: "laser Engraver",
+    project: "CNC Router",
     techstack: "Hardware",
     src: "/",
   },

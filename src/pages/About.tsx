@@ -1,8 +1,8 @@
 export default function About() {
   return (
-    <div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 mx-40 lg:grid-rows-[auto_1fr]   bg-cwhite-400 mt-40">
-        <div className="lg:pl-12 max-w-xs lg:max-w-xl">
+    <div className="flex flex-col items-center justify-center w-full h-full bg-cwhite-400 mb-10">
+      <div className="grid grid-cols-1 xl:w-3/4 lg:grid-cols-2 mx-40 lg:grid-rows-[auto_1fr]   bg-cwhite-400 mt-40">
+        <div className="lg:pl-12 max-w-xs lg:max-w-none flex items-center ">
           <img src="\images\profile.png" className="rounded-md mt-24" alt="" />
         </div>
         <div className="lg:order-first lg:row-span-2">

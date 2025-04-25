@@ -54,4 +54,21 @@ In the name, the C stands for custom, so custom white, custom black, custom grey
   --color-cblue-800: #181e2b;
   --color-cblue-900: #0b0e14;
   --color-cblue-950: #05070a;
-} 
+}
+
+/* this is for the home screen background */
+@theme inline {
+  --animate-aurora: aurora 60s linear infinite;
+  @keyframes aurora {
+    from {
+      background-position:
+        50% 50%,
+        50% 50%;
+    }
+    to {
+      background-position:
+        350% 50%,
+        350% 50%;
+    }
+  }
+}
