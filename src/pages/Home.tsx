@@ -1,24 +1,116 @@
 import { Carousel } from "../components/carousel";
 import { Timeline } from "../components/ui/timeline";
-import { Spotlight } from "../components/spotlight";
+
+import { motion, useScroll, useTransform } from "motion/react";
 
 export default function Home() {
+  const { scrollYProgress } = useScroll();
+
+  const scrollX = useTransform(scrollYProgress, [0, 0.5], [0, -5000]);
+
   return (
     <div className="w-full">
-      <div className="h-[40rem] w-full rounded-md flex md:items-center md:justify-center bg-cwhite-400 antialiased bg-grid-black/[0.02] relative overflow-hidden">
-      <Spotlight />
-      <div className="text-left p-4 max-w-7xl  mx-auto relative z-10  w-full pt-20 md:pt-0">
-        <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-cblack-50 to-cblack-400 bg-opacity-50">
-          Hey! I'm James Cao.
-        </h1>
-        <p className="mt-4 font-normal text-cblack-400 max-w-lg mx-auto">Building Checkment, Hackathons Canada and other Cool things</p> 
-        <p className="mt-4 font-normal text-cblack-400 max-w-lg mx-auto">
-          Currently Software Engineer building a BTB startup, and Hackathons Canada a community, partnering with hackathons to give hackers a better experince and also helping helping hackers find hackathons (I LOVE hackathons, lmk if you are hosting/going to any!!)
-        </p>
+      <div className="transition-bg relative flex h-[80vh] flex-col items-center justify-center bg-zinc-50 text-slate-950 dark:bg-zinc-900 pt-45">
+        <div
+          className="absolute inset-0 overflow-hidden"
+          style={
+            {
+              "--aurora":
+                "repeating-linear-gradient(100deg,#3b82f6_10%,#a5b4fc_15%,#93c5fd_20%,#ddd6fe_25%,#60a5fa_30%)",
+              "--dark-gradient":
+                "repeating-linear-gradient(100deg,#000_0%,#000_7%,transparent_10%,transparent_12%,#000_16%)",
+              "--white-gradient":
+                "repeating-linear-gradient(100deg,#fff_0%,#fff_7%,transparent_10%,transparent_12%,#fff_16%)",
+
+              "--blue-300": "#93c5fd",
+              "--blue-400": "#60a5fa",
+              "--blue-500": "#3b82f6",
+              "--indigo-300": "#a5b4fc",
+              "--violet-200": "#ddd6fe",
+              "--black": "#000",
+              "--white": "#fff",
+              "--transparent": "transparent",
+            } as React.CSSProperties
+          }
+        >
+          <div
+            className={`after:animate-aurora pointer-events-none absolute -inset-[10px] [background-image:var(--white-gradient),var(--aurora)] [background-size:300%,_200%] [background-position:50%_50%,50%_50%] opacity-50 blur-[10px] invert filter will-change-transform [--aurora:repeating-linear-gradient(100deg,var(--blue-500)_10%,var(--indigo-300)_15%,var(--blue-300)_20%,var(--violet-200)_25%,var(--blue-400)_30%)] [--dark-gradient:repeating-linear-gradient(100deg,var(--black)_0%,var(--black)_7%,var(--transparent)_10%,var(--transparent)_12%,var(--black)_16%)] [--white-gradient:repeating-linear-gradient(100deg,var(--white)_0%,var(--white)_7%,var(--transparent)_10%,var(--transparent)_12%,var(--white)_16%)] after:absolute after:inset-0 after:[background-image:var(--white-gradient),var(--aurora)] after:[background-size:200%,_100%] after:[background-attachment:fixed] after:mix-blend-difference after:content-[""] dark:[background-image:var(--dark-gradient),var(--aurora)] dark:invert-0 after:dark:[background-image:var(--dark-gradient),var(--aurora)]
+[mask-image:radial-gradient(ellipse_at_100%_0%,black_10%,var(--transparent)_70%)] flex `}
+          ></div>
+        </div>
+        <div>
+          <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-cblack-50 to-cblack-400 bg-opacity-50">
+            Hey! I'm James Cao.
+          </h1>
+          <p className="mt-2 ml-2 font-normal text-cblack-400 max-w-lg">
+            Building Checkment, Hackathons Canada and other Cool things
+          </p>
+          <p className="mt-4 ml-2 font-normal text-cblack-400 max-w-lg ">
+            Currently Software Engineer building a BTB startup, and Hackathons
+            Canada a community, partnering with hackathons to give hackers a
+            better experince and also helping helping hackers find hackathons (I
+            LOVE hackathons, lmk if you are hosting/going to any!!)
+          </p>
+        </div>
       </div>
-    </div>
+      <motion.div
+        style={{
+          x: scrollX 
+        }}
+        className="lg:-mt-20 -mt-4 mb-10 flex justify-center gap-5 py-4 sm:gap-8"
+      >
+        <div className="relative aspect-16/9 w-88 overflow-hidden flex-none rounded-lg bg-bwhite-500 shadow-[8px_10px_23px_0px_rgba(0,_0,_0,_0.3)] rotate-2 ">
+          <img
+            src="\images\cameraSliderSideView.png"
+            className="absolute inset-0 object-cover h-full w-full"
+            alt=""
+          />
+        </div>
+        <div className="relative aspect-16/9 w-88 overflow-hidden flex-none rounded-lg bg-bwhite-500 shadow-[8px_10px_23px_0px_rgba(0,_0,_0,_0.3)] -rotate-2">
+          <img
+            src="\images\cameraSliderSideView.png"
+            className="absolute inset-0 h-full w-full lobject-cover "
+            alt=""
+          />
+        </div>
+        <div className="relative aspect-16/9 w-88 overflow-hidden flex-none rounded-lg bg-bwhite-500 shadow-[8px_10px_23px_0px_rgba(0,_0,_0,_0.3)] rotate-2">
+          <img
+            src="\images\profile.png"
+            className="absolute inset-0 h-full w-full lobject-cover "
+            alt=""
+          />
+        </div>
+        <div className="relative aspect-16/9 w-88 overflow-hidden flex-none rounded-lg bg-bwhite-500 shadow-[8px_10px_23px_0px_rgba(0,_0,_0,_0.3)] rotate-2">
+          <img
+            src="\images\profile.png"
+            className="absolute inset-0 h-full w-full lobject-cover "
+            alt=""
+          />
+        </div>
+        <div className="relative aspect-16/9 w-88 overflow-hidden flex-none rounded-lg bg-bwhite-500 shadow-[8px_10px_23px_0px_rgba(0,_0,_0,_0.3)] -rotate-2">
+          <img
+            src="\images\profile.png"
+            className="absolute inset-0 h-full w-full lobject-cover "
+            alt=""
+          />
+        </div>
+        <div className="relative aspect-16/9 w-88 overflow-hidden flex-none rounded-lg bg-bwhite-500 shadow-[8px_10px_23px_0px_rgba(0,_0,_0,_0.3)] rotate-2">
+          <img
+            src="\images\profile.png"
+            className="absolute inset-0 h-full w-full lobject-cover "
+            alt=""
+          />
+        </div>
+        <div className="relative aspect-16/9 w-88 overflow-hidden flex-none rounded-lg bg-bwhite-500 shadow-[8px_10px_23px_0px_rgba(0,_0,_0,_0.3)] -rotate-2">
+          <img
+            src="\images\profile.png"
+            className="absolute inset-0 h-full w-full lobject-cover "
+            alt=""
+          />
+        </div>
+      </motion.div>
       {/* Major Acomplishments - Hackathons, Hackathons Canada, 3d laser engraver, this website */}
-      <div>
+      <div className="mt-10">
         <Carousel slides={slideData} />
       </div>
       <div className="mt-20 w-full">
@@ -67,28 +159,28 @@ const timelineData = [
             alt="startup template"
             width={500}
             height={500}
-            className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            className="rounded-lg objecth-full w-full l-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
           />
           <img
             src=""
             alt="startup template"
             width={500}
             height={500}
-            className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            className="rounded-lg objecth-full w-full l-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
           />
           <img
             src=""
             alt="startup template"
             width={500}
             height={500}
-            className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            className="rounded-lg objecth-full w-full l-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
           />
           <img
             src=""
             alt="startup template"
             width={500}
             height={500}
-            className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            className="rounded-lg objecth-full w-full l-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
           />
         </div>
       </div>
@@ -110,28 +202,28 @@ const timelineData = [
             alt="hero template"
             width={500}
             height={500}
-            className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            className="rounded-lg objecth-full w-full l-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
           />
           <img
             src=""
             alt="feature template"
             width={500}
             height={500}
-            className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            className="rounded-lg objecth-full w-full l-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
           />
           <img
             src=""
             alt="bento template"
             width={500}
             height={500}
-            className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            className="rounded-lg objecth-full w-full l-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
           />
           <img
             src=""
             alt="cards template"
             width={500}
             height={500}
-            className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            className="rounded-lg objecth-full w-full l-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
           />
         </div>
       </div>
@@ -167,28 +259,28 @@ const timelineData = [
             alt="hero template"
             width={500}
             height={500}
-            className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            className="rounded-lg objecth-full w-full l-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
           />
           <img
             src=""
             alt="feature template"
             width={500}
             height={500}
-            className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            className="rounded-lg objecth-full w-full l-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
           />
           <img
             src="  "
             alt="bento template"
             width={500}
             height={500}
-            className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            className="rounded-lg objecth-full w-full l-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
           />
           <img
             src="https://assets.aceternity.com/cards.png"
             alt="cards template"
             width={500}
             height={500}
-            className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            className="rounded-lg objecth-full w-full l-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
           />
         </div>
       </div>
