@@ -1,7 +1,7 @@
 export default function About() {
   return (
     <div className="flex flex-col items-center justify-center w-full h-full bg-cwhite-400 mb-10">
-      <div className="grid grid-cols-1 xl:w-3/4 lg:grid-cols-2 mx-40 lg:grid-rows-[auto_1fr]   bg-cwhite-400 mt-40">
+      <div className="grid grid-cols-1 xl:w-3/4 lg:grid-cols-2 mx-40 lg:grid-rows-[auto_1fr]  bg-cwhite-400 mt-40">
         <div className="lg:pl-12 max-w-xs lg:max-w-none flex items-center ">
           <img src="\images\profile.png" className="rounded-md mt-24" alt="" />
         </div>
@@ -89,7 +89,22 @@ export default function About() {
           </ul>
         </div>
       </div>
-      <div></div>
+      <div className=" flex flex-col items-center mt-40 h-full mx-60">
+        <h1>My Tech Stack</h1>
+        <h1>Languages</h1>
+        <div className = "grid-col-5 gap-8 h-full w-full">
+          <div className="flex items-center justify-center"><svg className="h-20 w-20 my-10 mx-20" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>javascript</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-420.000000, -7479.000000)" fill="#000000"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M379.328,7337.432 C377.583,7337.432 376.455,7336.6 375.905,7335.512 L375.905,7335.512 L377.435,7334.626 C377.838,7335.284 378.361,7335.767 379.288,7335.767 C380.066,7335.767 380.563,7335.378 380.563,7334.841 C380.563,7334.033 379.485,7333.717 378.724,7333.391 C377.368,7332.814 376.468,7332.089 376.468,7330.558 C376.468,7329.149 377.542,7328.075 379.221,7328.075 C380.415,7328.075 381.275,7328.491 381.892,7329.578 L380.429,7330.518 C380.107,7329.941 379.758,7329.713 379.221,7329.713 C378.67,7329.713 378.321,7330.062 378.321,7330.518 C378.321,7331.082 378.67,7331.31 379.476,7331.659 C381.165,7332.383 382.443,7332.952 382.443,7334.814 C382.443,7336.506 381.114,7337.432 379.328,7337.432 L379.328,7337.432 Z M375,7334.599 C375,7336.546 373.801,7337.575 372.136,7337.575 C370.632,7337.575 369.731,7337 369.288,7336 L369.273,7336 L369.266,7336 L369.262,7336 L370.791,7334.931 C371.086,7335.454 371.352,7335.825 371.996,7335.825 C372.614,7335.825 373,7335.512 373,7334.573 L373,7328 L375,7328 L375,7334.599 Z M364,7339 L384,7339 L384,7319 L364,7319 L364,7339 Z" id="javascript-[#155]"> </path> </g> </g> </g> </g></svg></div>
+          <div className="flex items-center justify-center"></div>
+          <div className="flex items-center justify-center"></div>
+          <div className="flex items-center justify-center"></div>
+          <div className="flex items-center justify-center"></div>
+
+        </div>
+        <h1>Frameworks & Libraries</h1>
+        <div></div>
+        <h1>Database & ORMs</h1>
+        <div></div>
+      </div>
     </div>
   );
 }

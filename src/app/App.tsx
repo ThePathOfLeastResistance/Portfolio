@@ -10,6 +10,7 @@ export default function App() {
           items={links}
         />
       </div>
+
       <Outlet />
     </div>
   );

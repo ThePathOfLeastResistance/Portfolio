@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <div className="w-full">
-      <div className="transition-bg relative flex h-[80vh] flex-col items-center justify-center bg-zinc-50 text-slate-950 dark:bg-zinc-900 pt-45">
+      <div className="transition-bg relative flex h-[80vh] flex-col items-center justify-center bg-zinc-50 text-slate-950 dark:bg-zinc-900">
         <div
           className="absolute inset-0 overflow-hidden"
           style={
@@ -30,7 +30,7 @@ export default function Home() {
               "--black": "#000",
               "--white": "#fff",
               "--transparent": "transparent",
-            } as React.CSSProperties
+            }
           }
         >
           <div
@@ -38,14 +38,20 @@ export default function Home() {
 [mask-image:radial-gradient(ellipse_at_100%_0%,black_10%,var(--transparent)_70%)] flex `}
           ></div>
         </div>
-        <div>
-          <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-cblack-50 to-cblack-400 bg-opacity-50">
-            Hey! I'm James Cao.
+        <div className="w-full h-full flex flex-col items-left justify-center px-75">
+          <h1 className="text-4xl md:text-7xl text-left font-bold bg-clip-text text-transparent mt-20 bg-gradient-to-b from-cblack-50 to-cblack-400 bg-opacity-50">
+            Hey! I'm James Cao. I am a software engineer and a hackathon lover. 
           </h1>
-          <p className="mt-2 ml-2 font-normal text-cblack-400 max-w-lg">
-            Building Checkment, Hackathons Canada and other Cool things
+          <div className="flex flex-row items-center mt-8 justify-left font-normal  text-cblack-400 ">
+          <p className="ml-2 text-left text-2xl">
+            Currently Building
           </p>
-          <p className="mt-4 ml-2 font-normal text-cblack-400 max-w-lg ">
+          <a href="" className="mx-2 px-3 py-1 text-lg ">Checkment</a>
+          <a href="" className="mx-2 px-3 py-1  text-lg ">Hack Canada</a>
+          <a href="" className="mx-2 px-3 py-1  text-lg ">Hackathons Canada</a>
+          </div>
+          
+          <p className="mt-4 ml-2 font-normal text-xl text-cblack-400 max-w-3/4">
             Currently Software Engineer building a BTB startup, and Hackathons
             Canada a community, partnering with hackathons to give hackers a
             better experince and also helping helping hackers find hackathons (I
@@ -53,64 +59,69 @@ export default function Home() {
           </p>
         </div>
       </div>
+      <div className = "h-full py-20 relative w-full overflow-hidden flex justify-center -mt-20">
       <motion.div
         style={{
           x: scrollX 
         }}
-        className="lg:-mt-20 -mt-4 mb-10 flex justify-center gap-5 py-4 sm:gap-8"
+        className="lg:-mt-20 -mt-4 mb-10 flex left-0 gap-5 py-4 sm:gap-8 w-full"
       >
-        <div className="relative aspect-16/9 w-88 overflow-hidden flex-none rounded-lg bg-bwhite-500 shadow-[8px_10px_23px_0px_rgba(0,_0,_0,_0.3)] rotate-2 ">
+        <div className="relative aspect-16/9 w-160 overflow-hidden flex-none rounded-lg bg-bwhite-500 shadow-[8px_10px_23px_0px_rgba(0,_0,_0,_0.3)] rotate-2 ">
           <img
             src="\images\cameraSliderSideView.png"
             className="absolute inset-0 object-cover h-full w-full"
             alt=""
           />
         </div>
-        <div className="relative aspect-16/9 w-88 overflow-hidden flex-none rounded-lg bg-bwhite-500 shadow-[8px_10px_23px_0px_rgba(0,_0,_0,_0.3)] -rotate-2">
+        <div className="relative aspect-16/9 w-160 overflow-hidden flex-none rounded-lg bg-bwhite-500 shadow-[8px_10px_23px_0px_rgba(0,_0,_0,_0.3)] -rotate-2">
           <img
             src="\images\cameraSliderSideView.png"
             className="absolute inset-0 h-full w-full lobject-cover "
             alt=""
           />
         </div>
-        <div className="relative aspect-16/9 w-88 overflow-hidden flex-none rounded-lg bg-bwhite-500 shadow-[8px_10px_23px_0px_rgba(0,_0,_0,_0.3)] rotate-2">
+        <div className="relative aspect-16/9 w-160 overflow-hidden flex-none rounded-lg bg-bwhite-500 shadow-[8px_10px_23px_0px_rgba(0,_0,_0,_0.3)] rotate-2">
           <img
             src="\images\profile.png"
             className="absolute inset-0 h-full w-full lobject-cover "
             alt=""
           />
         </div>
-        <div className="relative aspect-16/9 w-88 overflow-hidden flex-none rounded-lg bg-bwhite-500 shadow-[8px_10px_23px_0px_rgba(0,_0,_0,_0.3)] rotate-2">
+        <div className="relative aspect-16/9 w-160 overflow-hidden flex-none rounded-lg bg-bwhite-500 shadow-[8px_10px_23px_0px_rgba(0,_0,_0,_0.3)] rotate-2">
           <img
             src="\images\profile.png"
             className="absolute inset-0 h-full w-full lobject-cover "
             alt=""
           />
         </div>
-        <div className="relative aspect-16/9 w-88 overflow-hidden flex-none rounded-lg bg-bwhite-500 shadow-[8px_10px_23px_0px_rgba(0,_0,_0,_0.3)] -rotate-2">
+        <div className="relative aspect-16/9 w-160 overflow-hidden flex-none rounded-lg bg-bwhite-500 shadow-[8px_10px_23px_0px_rgba(0,_0,_0,_0.3)] -rotate-2">
           <img
             src="\images\profile.png"
             className="absolute inset-0 h-full w-full lobject-cover "
             alt=""
           />
         </div>
-        <div className="relative aspect-16/9 w-88 overflow-hidden flex-none rounded-lg bg-bwhite-500 shadow-[8px_10px_23px_0px_rgba(0,_0,_0,_0.3)] rotate-2">
+        <div className="relative aspect-16/9 w-160 overflow-hidden flex-none rounded-lg bg-bwhite-500 shadow-[8px_10px_23px_0px_rgba(0,_0,_0,_0.3)] rotate-2">
           <img
             src="\images\profile.png"
             className="absolute inset-0 h-full w-full lobject-cover "
             alt=""
           />
         </div>
-        <div className="relative aspect-16/9 w-88 overflow-hidden flex-none rounded-lg bg-bwhite-500 shadow-[8px_10px_23px_0px_rgba(0,_0,_0,_0.3)] -rotate-2">
+        <div className="relative aspect-16/9 w-160 overflow-hidden flex-none rounded-lg bg-bwhite-500 shadow-[8px_10px_23px_0px_rgba(0,_0,_0,_0.3)] -rotate-2">
           <img
             src="\images\profile.png"
             className="absolute inset-0 h-full w-full lobject-cover "
             alt=""
           />
         </div>
-      </motion.div>
+      </motion.div></div>
       {/* Major Acomplishments - Hackathons, Hackathons Canada, 3d laser engraver, this website */}
-      <div className="mt-10">
+      <div className="flex flex-row justify-center items-center mx-75 mt-20">
+        <h1 className="text-5xl max-w-lg me-15">My Favourate Accomplishments</h1>
+        <p className="text-xl">These projects may not be the most complicated but are the one that I learned the most or had to most fun doing. These include hardware, software and also other things like hosting hackathons. Feel free to ask me anything about them. Would love to have a chat!</p>
+      </div>
+      <div className="relative overflow-hidden w-full h-full py-20">
         <Carousel slides={slideData} />
       </div>
       <div className="mt-20 w-full">
@@ -120,7 +131,6 @@ export default function Home() {
   );
 }
 
-<h1 className="size"> </h1>;
 
 const slideData = [
   {
